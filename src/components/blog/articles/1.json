@@ -1,0 +1,18 @@
+{
+  "articles": [
+    {
+      "title": "We got a blog!",
+      "date": "May 23 2020",
+      "category": "misc",
+      "img": "",
+      "text": "Hi guys, We have finalled launched our blog; it's actually in it's beta version, we hope to release its full version within 1 month. Thank you all!"
+    },
+    {
+      "title": "test",
+      "date": "May 23 2020",
+      "category": "misc",
+      "img": "",
+      "text": "Hi guys, I feel so sad to leave this amazing team. But you know, life happens and I've gotten too busy to focus on festivals. So the best thing to do is leave and look for someone to replace me if possible. Though I'm level 18 VIP 0 player, I make around 30,000 to 40,000 trophies in weekend festivals and same amount or less in weekday festivals. I'll be glad if I can get someone with similar capabilities to replace me. Thank you."
+    }
+  ]
+}

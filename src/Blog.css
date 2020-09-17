@@ -1,0 +1,20 @@
+.blog-containermain {
+  display: flex;
+}
+
+.blog-title {
+  text-align: center;
+}
+
+.blogfeed-container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.blogpost-container {
+  margin-bottom: 20px;
+}
+
+.category-menu-container {
+  text-align: center;
+}
