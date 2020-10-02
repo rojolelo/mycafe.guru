@@ -125,3 +125,36 @@ table {
   color: black;
   cursor: pointer;
 }
+
+.section-separator {
+  padding-bottom: 20px;
+}
+
+#reclamar-recompensa {
+  font-weight: bold;
+}
+
+#reglamento {
+  text-align: center;
+}
+
+.girasol-indice {
+  text-align: center;
+}
+
+.girasol-indice table {
+  margin-top: 5px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5%;
+  margin-bottom: 20px;
+}
+
+.girasol-container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.girasol-container h3 {
+  font-weight: bold;
+}

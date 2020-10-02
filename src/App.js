@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Footer from './components/blog/Footer';
 import Blog from './components/blog/Blog';
 import NavBar from './components/blog/NavBar';
+import GirasolPage from './components/GirasolPage';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   const [mode, setMode] = useState('trophies');
@@ -369,6 +371,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <h1 className="title">My Cafe Calculator</h1>
         <NavBar />
@@ -381,6 +384,10 @@ function App() {
               return <Blog location={location} />;
             }}
           ></Route>
+
+          <Route path="/girasol">
+            <GirasolPage />
+          </Route>
 
           <Route path="/">
             <Options changeMode={changeMode} />
