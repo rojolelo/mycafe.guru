@@ -5,6 +5,21 @@ const BlogPost = (props) => {
   const date = props.data.date;
   const img = props.data.img;
   const text = props.data.text;
+
+  var textReducer = () => {
+    console.log(text.length);
+    if (text.length <= 400) return text;
+
+    let finalText = '';
+    for (let i = 0; i < 300; i++) {
+      finalText += text[i];
+    }
+
+    finalText += '... \n \n ...Click here to Read More.';
+
+    return finalText;
+  };
+
   return (
     <div className="blogpost-container">
       <div className="blogpost-title">
@@ -15,7 +30,7 @@ const BlogPost = (props) => {
         <p>Date: {date} </p>
       </div>
 
-      <div className="blogpost-content">{text}</div>
+      <div className="blogpost-content">{textReducer()}</div>
     </div>
   );
 };

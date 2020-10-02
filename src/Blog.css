@@ -18,3 +18,7 @@
 .category-menu-container {
   text-align: center;
 }
+
+.blogpost-content {
+  white-space: pre-wrap;
+}
