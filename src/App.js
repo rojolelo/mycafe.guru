@@ -373,8 +373,11 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
-        <h1 className="title">My Cafe Calculator</h1>
-        <NavBar />
+        <Link to="/" id="title-link">
+          {' '}
+          <h1 className="title">My Cafe Calculator</h1>
+        </Link>
+        {/* <NavBar /> */}
         <div className="separator"></div>
 
         <Switch>
