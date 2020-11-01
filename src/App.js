@@ -5,7 +5,13 @@ import './Blog.css';
 import Options from './components/Options';
 import Earnings from './components/Earnings';
 import Members from './components/Members';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  HashRouter,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 import Footer from './components/blog/Footer';
 import Blog from './components/blog/Blog';
 import NavBar from './components/blog/NavBar';
@@ -370,7 +376,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <div className="App">
         <Link to="/" id="title-link">
@@ -416,7 +422,7 @@ function App() {
         <div className="separator"></div>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
