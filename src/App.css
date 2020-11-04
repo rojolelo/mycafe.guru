@@ -126,7 +126,12 @@ table {
 }
 
 .navbar-button {
-  border: orangered 2px solid;
+  box-shadow: 0px 0px 4px gray;
+  border: none;
+  border-top: orangered 2px solid;
+  border-bottom: orangered 2px solid;
+  padding-left: 10px;
+  padding-right: 10px;
   color: black;
   cursor: pointer;
 }
