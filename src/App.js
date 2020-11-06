@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import './Footer.css';
 import './Blog.css';
+import './Roulette.css';
 import Options from './components/Options';
 import Earnings from './components/Earnings';
 import Members from './components/Members';
@@ -14,9 +15,10 @@ import {
 } from 'react-router-dom';
 import Footer from './components/blog/Footer';
 import Blog from './components/blog/Blog';
-import NavBar from './components/blog/NavBar';
+import NavBar from './components/NavBar';
 import GirasolPage from './components/GirasolPage';
 import ScrollToTop from './ScrollToTop';
+import Roulette from './components/Roulette';
 
 function App() {
   const [mode, setMode] = useState('trophies');
@@ -376,14 +378,14 @@ function App() {
   };
 
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <Router basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <div className="App">
         <Link to="/" id="title-link">
           {' '}
           <h1 className="title">My Cafe Calculator</h1>
         </Link>
-        {/* <NavBar /> */}
+        <NavBar />
         <div className="separator"></div>
 
         <Switch>
@@ -396,6 +398,10 @@ function App() {
 
           <Route path="/girasol">
             <GirasolPage />
+          </Route>
+
+          <Route path="/roulette">
+            <Roulette />
           </Route>
 
           <Route path="/">
@@ -422,7 +428,7 @@ function App() {
         <div className="separator"></div>
         <Footer />
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 

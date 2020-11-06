@@ -4,16 +4,15 @@ import RightBar from './RightBar';
 import CategoryMenu from './CategoryMenu';
 
 const Blog = (props) => {
-  console.log(props.location);
   return (
     <div className="blog-container">
       <div className="blog-title">
-        <h1>My Cafe Guru Blog</h1>
+        <h1>Blog</h1>
       </div>
       <div className="separator"></div>
-      <CategoryMenu />
+      {/* <CategoryMenu /> */}
       <div className="blog-containermain">
-        <BlogFeed location={props.location} />
+        <BlogFeed key={props.location.search} location={props.location} />
         {
           // <RightBar />
         }

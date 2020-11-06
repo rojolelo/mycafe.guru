@@ -1,11 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogPost from './BlogPost';
-import articles from './articles/1.json';
+import axios from 'axios';
+import BlogPagination from './BlogPagination';
 
 const BlogFeed = (props) => {
-  const posts = articles.articles;
-  const path = props.location.pathname;
+  const [articles, setArticles] = useState([]);
+  const [totalPages, setTotalPages] = useState(false);
+  const [currentPage, setCurrentPage] = useState(parseCurrentPage());
   const [category, setCategory] = useState('all');
+  const [isLoading, setIsLoading] = useState(true);
+  const [showError, setShowError] = useState(false);
+
+  function parseCurrentPage() {
+    if (props.location.search.length === 0) return 1;
+    let wholeString = props.location.search.split('?').slice(1);
+    let separatedValues = wholeString[0].split('=');
+    let currentPage = separatedValues[1];
+    return currentPage;
+  }
+
+  const path = props.location.pathname;
+
+  useEffect(() => {
+    axios
+      .post('/api/blog', { currentPage })
+      .then((res) => {
+        console.log('Axios BlogFeed useEffect:');
+        console.log(res);
+        setArticles(res.data.articles);
+        setTotalPages(res.data.totalOfPages);
+        setCurrentPage(res.data.currentPage);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setShowError(true);
+      });
+  }, []);
 
   if (path === '/blog' && category !== 'all') {
     setCategory('all');
@@ -17,18 +48,29 @@ const BlogFeed = (props) => {
     setCategory('misc');
   }
 
-  const filteredPosts = posts.filter((x) => {
+  /* const filteredPosts = posts.filter((post) => {
     if (category === 'all') return true;
-    if (x.category == category) return true;
+    if (post.category == category) return true;
     return false;
-  });
+  }); */
 
   return (
-    <div className="blogfeed-container">
-      {filteredPosts.map((post, key) => {
-        return <BlogPost data={post} key={key} />;
-      })}
-    </div>
+    <React.Fragment>
+      <div className="blogfeed-container">
+        {isLoading ? <div className="blogfeed-loading">Loading...</div> : null}
+
+        {showError ? (
+          <div className="blogfeed-error">
+            I'm sorry. There was an error loading the posts.
+          </div>
+        ) : null}
+
+        {articles.map((article, key) => {
+          return <BlogPost data={article} key={key} />;
+        })}
+      </div>
+      <BlogPagination currentPage={currentPage} totalPages={totalPages} />
+    </React.Fragment>
   );
 };
 

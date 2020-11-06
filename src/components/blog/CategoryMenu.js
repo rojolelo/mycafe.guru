@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 const CategoryMenu = () => {
   return (
     <div className="category-menu-container">
+      <Link to="/blog">
+        <button className="navbar-button">All</button>
+      </Link>
       <Link to="/blog/news">
         <button className="navbar-button">News</button>
       </Link>

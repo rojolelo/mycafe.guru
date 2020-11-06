@@ -10,6 +10,9 @@ const NavBar = () => {
       <Link to="/blog">
         <button className="navbar-button">Blog</button>
       </Link>
+      <Link to="/roulette">
+        <button className="navbar-button">Roulette</button>
+      </Link>
     </div>
   );
 };

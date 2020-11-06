@@ -2,12 +2,11 @@
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: black;
-  font-weight: 500;
 }
 
 h1 {
   font-weight: bold;
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 5px;
   font-family: 'ABeeZee', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
@@ -128,8 +127,8 @@ table {
 .navbar-button {
   box-shadow: 0px 0px 4px gray;
   border: none;
-  border-top: orangered 2px solid;
-  border-bottom: orangered 2px solid;
+  border-top: orange 2px solid;
+  border-bottom: orange 2px solid;
   padding-left: 10px;
   padding-right: 10px;
   color: black;
