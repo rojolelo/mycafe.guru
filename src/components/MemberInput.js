@@ -33,6 +33,11 @@ const MemberInput = (props) => {
       <td>
         <label className="member-label">Member </label>
         {props.number}
+        <input
+          className="member-input-name"
+          type="text"
+          placeholder="Name"
+        ></input>
       </td>
       {props.mode != 'tasks' ? (
         <td>
