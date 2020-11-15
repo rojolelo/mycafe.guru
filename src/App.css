@@ -108,7 +108,7 @@ table {
 
 .member-input-name {
   margin: 0 5px;
-  width: 100px;
+  width: 75px;
   border: 1px solid rgb(150, 150, 150);
   border-radius: 5px;
 }
@@ -117,9 +117,22 @@ table {
   display: none;
 }
 
-@media (max-width: 425px) {
+table {
+  border-collapse: collapse;
+}
+
+/* td {
+  border-bottom: 1px solid rgba(255, 165, 0, 1);
+  padding: 3px 0px;
+} */
+
+@media (max-width: 450px) {
   .member-label {
     display: none;
+  }
+  td {
+    padding: 5px 0px;
+    border-bottom: 1px solid rgba(255, 165, 0, 1);
   }
 }
 
